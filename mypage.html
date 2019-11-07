@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>マイページ | iTube</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://kit.fontawesome.com/affce0dfee.js" crossorigin="anonymous"></script>
+  <script src="https://www.amcharts.com/lib/4/core.js"></script>
+  <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+  <!-- カラーテーマ -->
+  <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+  <script src="js/chart.js"></script>
+</head>
+
+<body>
+  <div id="mypage_box">
+
+    <!-- サイドバー（ナビエリア） -->
+    <div class="sidebar">
+      <header>メニュー</header>
+      <nav class="sidebar_nav">
+        <ul>
+          <li class="control"><a href="#"><i class="fas fa-home"></i><span>マイページ</span></a>
+            <ul class="sidebar_nav">
+              <li><a href="#"><i class="fa fa-calendar fa-fw"></i>ここ</a></li>
+              <li><a href="#"><i class="fa fa-calendar-minus-o fa-fw"></i>Todo List</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><i class="fas fa-tv"></i><span class="">動画を探す</span></a>
+            <ul class="sidebar_nav">
+              <li><a href="#"><i class="fa fa-file-image-o fa-fw"></i>教科から探す</a></li>
+              <li><a href="#"><i class="fa fa-file-video-o fa-fw"></i>単元から探す</a></li>
+              <li><a href="#"><i class="fa fa-file-audio-o fa-fw"></i>目標から探す</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-star"></i><span class="">お気に入り</span></a>
+            <ul class="sidebar_nav">
+              <li><a href="#"><i class="fa fa-commenting fa-fw"></i>フォルダ管理</a></li>
+              <li><a href="#"><i class="fa fa-comments fa-fw"></i>全て表示</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-pen-nib"></i><span class="">無料教材</span></a>
+            <ul class="sidebar_nav">
+              <li><a href="#"><i class="fa fa-facebook fa-fw"></i>教科から探す</a></li>
+              <li><a href="#"><i class="fa fa-twitter fa-fw"></i>学年から探す</a></li>
+              <!-- <li><a href="#"><i class="fa fa-google-plus fa-fw"></i>あいうえお</a></li> -->
+            </ul>
+          </li>
+          <li><a href="#"><i class="far fa-question-circle"></i><span class="">ヘルプ</span></a></li>
+          <li><a href="#"><i class="fas fa-cog"></i><span class="">設定</span></a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- 右エリア -->
+    <div id="my_right_box">
+      <!-- 上段 -->
+      <div id="my_upper_row">
+
+        <!-- 検索バー -->
+        <div id="search_box">
+          <input type="text" placeholder="単元を検索">
+          <div id="your_name">宇垣美里</div>
+          <img src="img/github.png" alt="" class="profile_img">
+        </div>
+
+      </div>
+
+      <!-- 中段 -->
+      <div id="my_middle_row">
+
+        <!-- 勉強時間 -->
+        <div id="study_time_box">
+          <div class="my_box_title">学習時間</div>
+          <div id="chart_box"></div>
+        </div>
+        <!-- 目標設定 -->
+        <div id="set_goal_box">
+          <div id="left_goal">
+            <div id="left_goal_title"><span style="font-weight: bold; font-size: 20px;">定期テスト</span>まで</div>
+            <div class="days_left">17日</div>
+            <div class="basic_button">変更</div>
+          </div>
+          <div id="right_goal">
+            <div id="right_goal_title"><span style="font-weight: bold;font-size: 20px;">甲子園</span>まで</div>
+            <div class="days_left">67日</div>
+            <div class="basic_button">変更</div>
+          </div>
+        </div>
+
+        <!-- TodoList 優先度max -->
+        <div id="todolist_max_box">
+
+        </div>
+
+      </div>
+
+      <!-- 下段 -->
+      <div id="my_bottom_row">
+
+        <!-- 視聴履歴 -->
+        <div id="viewing_history_box">
+          <div class="my_box_title">
+            視聴履歴
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>タイトル</th>
+                <th>単元名</th>
+                <th>教科</th>
+                <th>学年</th>
+              </tr>
+            </thead>
+            <tr>
+              <td>数列から式を導きだそう。</td>
+              <td class="center">数列</td>
+              <td class="center">数学</td>
+              <td class="center">高校1年</td>
+            </tr>
+            <tr>
+              <td>数列から式を導きだそう。</td>
+              <td class="center">数列</td>
+              <td class="center">数学</td>
+              <td class="center">高校1年</td>
+            </tr>
+            <tr>
+              <td>数列から式を導きだそう。</td>
+              <td class="center">数列</td>
+              <td class="center">数学</td>
+              <td class="center">高校1年</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- 復習のすすめ（エビングハウスの忘却曲線に基づく） -->
+        <div id="review_box">
+          <div class="my_box_title">おすすめ復習動画</div>
+          <div id="entire_videos">
+            <div class="video_box">
+              <div class="video_box_left">
+                <div class="unit_title">majikoの歌</div>
+                <div class="unit_detail">エミリーと15の約束をした歌です。</div>
+                <div class="bottom_video_box">
+                  <i class="far fa-play-circle"></i>
+                  <div class="total_video_num">24動画</div>
+                  <div class="finish_video_num">完了動画数：12</div>
+                </div>
+              </div>
+              <div class="review_video">
+                <iframe width="200" height="126" src="https://www.youtube.com/embed/Id2a2gbW1Zs" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="video_box">
+              <div class="video_box_left">
+                <div class="unit_title">ピースサイン</div>
+                <div class="unit_detail">ヒロアカと米津玄師の夢のコラボ</div>
+                <div class="bottom_video_box">
+                  <i class="far fa-play-circle"></i>
+                  <div class="total_video_num">15動画</div>
+                  <div class="finish_video_num">完了動画数：2</div>
+                </div>
+              </div>
+              <div class="review_video">
+                <iframe width="200" height="126" src="https://www.youtube.com/embed/1oMxrHXzOsY" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="move_right">
+              <div class="more_button">もっとみる</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+  </div>
+
+
+</body>
+
+</html>

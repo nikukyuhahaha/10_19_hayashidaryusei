@@ -1,0 +1,376 @@
+/* ページ全体 */
+#mypage_box {
+  display: flex;
+}
+
+body {
+  background: #F0F0F7;
+}
+
+.my_box_title {
+  text-align: center;
+  font-size: 18px;
+  color: rgb(46, 45, 45);
+  padding: 5px 0;
+}
+
+/* サイドバー */
+.sidebar a {
+	-webkit-transition: all 0.6s ease;
+					transition: all 0.6s ease;
+	text-decoration: none;
+}
+.sidebar a:hover {
+	-webkit-transition: all 0.6s ease;
+					transition: all 0.6s ease;
+}
+.sidebar * {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.sidebar {
+	position: absolute;
+	top: 0;
+	visibility: visible;
+	overflow: hidden;
+	width: 200px;
+	height: 100%;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	background-color: #37474F;
+}
+.sidebar header {
+	display: block;
+	width: 100%;
+	padding: 0.75em	1em;
+  background-color: #1c53a5b6;
+  color: #ffffff;
+}
+.sidebar_nav {
+	font-size: 1.2em;
+	position: fixed;
+	z-index: 9;
+	overflow: hidden;
+	/* overflow: auto; メニューをスクロールさせる場合*/
+	height: 100%;
+	padding-bottom: 6em;
+	background-color: #263238;
+	-webkit-overflow-scrolling: touch;
+}
+.sidebar_nav ul {
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 200px;
+}
+.sidebar_nav ul li {
+	display: inline-block;
+	width: 100%;
+	margin-left: 0;
+	padding-left: 0;
+}
+.sidebar_nav ul li.control {
+	background-color: rgb(18, 110, 185);
+}
+.sidebar_nav ul li a {
+	font-size: 0.75em;
+	position: relative;
+	display: block;
+	padding: 1.05em	1em;
+	color: rgba(255, 255, 255, 0.9);
+}
+.sidebar_nav ul li a:hover {
+	-webkit-transition: all 0.6s ease;
+					transition: all 0.6s ease;
+	background-color: rgba(0, 100, 193, 0.7);
+}
+.sidebar_nav ul li i {
+	font-size: 1.5em;
+	display: inline-block;
+	padding-right: 0.5em;
+	vertical-align: middle;
+}
+.sidebar_nav ul li > ul li a {
+	font-size: 0.6em;
+}
+.sidebar_nav > ul > li > a:after {
+	font-family: FontAwesome;
+	font-size: 1.5em;
+	position: absolute;
+	top: 50%;
+	right: 0.5em;
+	width: auto;
+	content: '\f0a9';
+	-webkit-transform: translateY(-50%);
+					transform: translateY(-50%);
+	color: #ffffff;
+}
+.sidebar_nav .sidebar_nav {
+	position: absolute;
+	z-index: 9;
+	top: 0;
+	left: 2.2em;
+	height: 100vh;
+	-webkit-transition: all 0.5s ease;
+					transition: all 0.5s ease;
+	-webkit-transform: translateX(100%);
+					transform: translateX(100%);
+	background-color: #455a64;
+}
+.sidebar_nav .sidebar_nav a:hover {
+	background-color: rgba(0, 100, 193, 0.7);
+}
+.sidebar_nav ul > li:hover .sidebar_nav {
+	-webkit-transition: all 0.5s ease;
+					transition: all 0.5s ease;
+	-webkit-transform: translateX(0);
+					transform: translateX(0);
+}
+
+/* 右エリア */
+#my_right_box {
+  position: absolute;
+  left: 200px;
+  width: 1240px;
+}
+/* 上段エリア */
+#my_upper_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 検索バー */
+#search_box {
+  display: flex;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  width: 80%;
+  height: 50px;
+  border: 1px solid rgb(174, 174, 174);
+  border-radius: 5px;
+  margin-top: 20px ;
+}
+
+#search_box > input {
+  font-size: 19px;
+  width: 85%;
+  padding-left: 20px;
+}
+#your_name {
+  padding: 0 5px;
+}
+
+.profile_img {
+  border-radius: 50%;
+  padding: 0 5px;
+  width: 40px;
+  height: 40px;
+}
+
+/* 中段エリア */
+
+#my_middle_row {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#study_time_box, #set_goal_box{
+  margin: 0 5px;
+  margin-top: 10px;
+  background: #fff;
+  border: 1px solid rgb(174, 174, 174);
+  height: 250px;
+  border-radius: 5px;
+}
+/* 勉強時間 */
+#study_time_box {
+  width: 50%;
+}
+
+#chart_box {
+  width: 100%;
+  height: 280px;
+}
+
+/* 目標設定 */
+
+#set_goal_box {
+width: 35%;
+display: flex;
+flex-direction: row;
+}
+
+#left_goal, #right_goal {
+  width: 50%;
+}
+#left_goal_title ,#right_goal_title{
+  text-align: center;
+}
+
+.days_left {
+  font-size: 56px;
+  font-weight: bold;
+  position: relative;
+  top: 25%;
+  left: 25%;
+}
+
+.basic_button {
+  position: relative;
+  top: 46%;
+  left: 50%;
+  width: 50px;
+  height: 18px;
+  border: 1px solid #929394bd;
+  border-radius: 3px;
+  padding: 2px 5px;
+  box-shadow: 1px 1px 1px #929394bd;
+  text-align: center;
+  color: #455a64;
+  cursor: pointer;
+}
+/* TodoList 優先度max */
+
+
+/* 下段エリア */
+
+#my_bottom_row {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#viewing_history_box, #review_box{
+  margin: 0 5px;
+  margin-top: 10px;
+  background: #fff;
+  border: 1px solid rgb(174, 174, 174);
+  height: 400px;
+  border-radius: 5px;
+}
+
+/* 視聴履歴 */
+#viewing_history_box {
+  width: 50%;
+}
+
+
+#viewing_history_box > table {
+  border-collapse: collapse;
+  margin: 5px auto;
+  padding: 0;
+  width: 98%;
+  box-shadow: 0 0 15px -6px #00000073;
+  line-height: 1.25;
+}
+table tr {
+  background-color: #fff;
+}
+table tbody tr:hover{
+  background-color: #fffae9;
+}
+table th,
+table td {
+  padding: .35em 1em;
+  border-bottom: 1px solid #eee;
+}
+table thead th {
+    font-size: .85em;
+    padding: .6em;
+}
+table thead tr{
+  background-color: rgba(0, 100, 193, 0.7);
+  color:#fff;
+}
+table tbody th {
+  text-align: left;
+  font-size: .8em;
+}
+.center{
+   text-align: center;
+}
+.price{
+  text-align: right;
+  color: #000;
+  font-weight: bold;
+}
+@media screen and (max-width: 600px) {
+  table{width: 100%;}
+}
+
+/* 復習エリア */
+#review_box {
+width: 35%;
+}
+
+#entire_videos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.unit_title {
+  font-size: 23px;
+  color: #455a64;
+  padding: 3px 4px;
+}
+
+.unit_detail {
+  height: 50%;
+  width: 94%;
+  font-size: 15px;
+  color: #455a64;
+  padding: 2px 4px;
+
+}
+.total_video_num {
+    position: relative;
+  left: 2%;
+}
+
+.finish_video_num{
+  position: relative;
+  left: 7%;
+}
+
+.video_box {
+  display: flex;
+  flex-direction: row;
+  width: 98%;
+  border: 1px solid #929394bd;
+  border-radius: 3px;
+  padding: 5px 5px;
+  margin: 6px 10px;
+  box-shadow: 1px 1px 1px #929394bd;
+}
+
+.bottom_video_box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fa-play-circle {
+  color: rgb(199, 65, 65);
+  font-size: 25px;
+}
+
+.move_right {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.more_button {
+  height: 18px;
+  border: 1px solid #929394bd;
+  border-radius: 3px;
+  padding: 2px 10px;
+  box-shadow: 1px 1px 1px #929394bd;
+  text-align: center;
+  color: #455a64;
+  cursor: pointer;
+}
